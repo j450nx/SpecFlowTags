@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace SpecFlowProject1.Utility
 {
-   public class ExtentReports
+   
+    public class ExtentReport
     {
         public static ExtentReports _extentReports;
         public static ExtentTest _feature;
@@ -47,6 +48,5 @@ namespace SpecFlowProject1.Utility
             screenshot.SaveAsFile(screenshotLocation, ScreenshotImageFormat.Png);
             return screenshotLocation;
         }
-
     }
 }
