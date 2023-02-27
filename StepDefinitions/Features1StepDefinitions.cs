@@ -18,6 +18,7 @@ namespace SpecFlow.StepDefinitions
         public void WhenOpenTheURL()
         {
             driver.Url = "https://www.youtube.com";
+            //driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
@@ -25,9 +26,9 @@ namespace SpecFlow.StepDefinitions
         public void ThenSearchForTestersTalk()
         {
             //driver.SwitchTo().Window(driver.WindowHandles[0]);
-            //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"search\"]")));
-            IWebElement searchBox = driver.FindElement(By.XPath("//*[@id=\"search\"]"));
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@name='search_query']")));
+            IWebElement searchBox = driver.FindElement(By.XPath("//*[@name='search_query']"));
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             searchBox.SendKeys("Testers Talk");
             searchBox.SendKeys(Keys.Enter);
             driver.Close();
