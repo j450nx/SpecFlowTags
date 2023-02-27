@@ -8,7 +8,7 @@
 SpecFlow Living Doc:
 1. dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
 2. cd workspace\SpecFlowProject1\bin\Debug\net6.0
-3. livingdoc test-assembly PROJECT_NAME.dll -t TestExecution.json
+3. livingdoc test-assembly SpecFlowProject1.dll -t TestExecution.json
 
 Hooks:
 BeforeFeature

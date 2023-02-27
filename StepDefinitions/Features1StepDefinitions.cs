@@ -8,10 +8,15 @@ namespace SpecFlow.StepDefinitions
     {
         private IWebDriver driver;
 
+        public Feature1StepDefinitions(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
         [Given(@"Open the browser")]
         public void GivenOpenTheBrowser()
         {
-            driver = new OpenQA.Selenium.Edge.EdgeDriver();
+            //driver = new OpenQA.Selenium.Edge.EdgeDriver();
         }
 
         [When(@"Enter the URL")]
@@ -19,7 +24,7 @@ namespace SpecFlow.StepDefinitions
         {
             driver.Url = "https://www.youtube.com";
             //driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
         [Then(@"Search for Testers Talk")]
@@ -31,8 +36,8 @@ namespace SpecFlow.StepDefinitions
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             searchBox.SendKeys("Testers Talk");
             searchBox.SendKeys(Keys.Enter);
-            driver.Close();
-            driver.Quit();
+            //driver.Close();
+            //driver.Quit();
         }
     }
 }
