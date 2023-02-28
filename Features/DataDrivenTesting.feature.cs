@@ -20,22 +20,22 @@ namespace SpecFlowProject1.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Youtube search feature")]
-    public partial class YoutubeSearchFeatureFeature
+    [NUnit.Framework.DescriptionAttribute("Data Driven Testing")]
+    public partial class DataDrivenTestingFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Feature1.feature"
+#line 1 "DataDrivenTesting.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Youtube search feature", "Search for the Testers Talk", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Data Driven Testing", "Search for the Testers Talk", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,11 +75,11 @@ namespace SpecFlowProject1.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search for Testers Talk")]
-        [NUnit.Framework.CategoryAttribute("TestersTalk")]
+        [NUnit.Framework.CategoryAttribute("DataDrivenTesting")]
         public void SearchForTestersTalk()
         {
             string[] tagsOfScenario = new string[] {
-                    "TestersTalk"};
+                    "DataDrivenTesting"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for Testers Talk", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
@@ -99,7 +99,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Enter the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then("Search for Testers Talk", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Search for \'Testers Talk data driven\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

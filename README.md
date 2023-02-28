@@ -37,3 +37,5 @@ How to implement Hooks in SpecFlow
 Run the feature file and verify the extent report index.html report
 
 How to capture screenshot on failed test case
+
+Data driven testing
