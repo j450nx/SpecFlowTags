@@ -39,3 +39,8 @@ Run the feature file and verify the extent report index.html report
 How to capture screenshot on failed test case
 
 Data driven testing
+	[Then(@"Search for '([^']*)'")]
+	Then Search for 'parameters'
+
+Examples data driven testing: Scenario Outline, Examples, | header |, | values |
+	[Then(@"Search with (.*)")]
