@@ -50,3 +50,22 @@ Data table data driven testing:
 	create table: var searchCriteria = table.CreateSet<SearchKeyTestData>();
 	create method to fetch data: public string searchKey { get; set; }
 	run a for loop through each data set
+
+Page Object Model(POM) concept
+	design pattern to create object repository for web elements
+	each web page will be corresponding to the to their page class
+	page class contains all the web page elements and methods to perform on those elements
+	Pro:
+	code will be cleaner and easier to understand
+	object repository is independent of test scripts
+	test scripts will be optimized because of elements repsective abstraction method in page classes
+	Con:
+	time & effort
+	specific to project
+
+	Steps:
+	create feature class
+	create step definitions class
+	create Pages folder
+	create page class, make it public
+	

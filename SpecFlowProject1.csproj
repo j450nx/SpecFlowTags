@@ -9,6 +9,7 @@
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\DataDrivenTesting - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ExamplesDataDrivenTesting - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Feature1 - Copy.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,11 +33,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\PageObjectModel.feature.cs">
+      <DependentUpon>PageObjectModel.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <SpecFlowFeatureFiles Update="Features\DataTableDataDrivenTesting.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\ExamplesDataDrivenTesting.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\PageObjectModel.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
