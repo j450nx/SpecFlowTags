@@ -34,4 +34,6 @@ Create ExtentReport utility class
 
 How to implement Hooks in SpecFlow
 
-Run the feature file and verify the extent report .html report
+Run the feature file and verify the extent report index.html report
+
+How to capture screenshot on failed test case
