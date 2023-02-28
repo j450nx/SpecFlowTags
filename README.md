@@ -44,3 +44,9 @@ Data driven testing
 
 Examples data driven testing: Scenario Outline, Examples, | header |, | values |
 	[Then(@"Search with (.*)")]
+
+Data table data driven testing:
+	[Then(@"Enter search keyword in Youtube")]
+	create table: var searchCriteria = table.CreateSet<SearchKeyTestData>();
+	create method to fetch data: public string searchKey { get; set; }
+	run a for loop through each data set

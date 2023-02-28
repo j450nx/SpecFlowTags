@@ -20,22 +20,22 @@ namespace SpecFlowProject1.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Feature1")]
-    public partial class Feature1Feature
+    [NUnit.Framework.DescriptionAttribute("DataTable Data Driven Testing")]
+    public partial class DataTableDataDrivenTestingFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Feature1.feature"
+#line 1 "DataTableDataDrivenTesting.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Feature1", "Search for the Testers Talk", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "DataTable Data Driven Testing", "Search for the Testers Talk with table data", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,14 +74,14 @@ namespace SpecFlowProject1.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search for Testers Talk")]
-        [NUnit.Framework.CategoryAttribute("TestersTalk")]
-        public void SearchForTestersTalk()
+        [NUnit.Framework.DescriptionAttribute("Examples Data Driven Testing")]
+        [NUnit.Framework.CategoryAttribute("DataTableDataDrivenTesting")]
+        public void ExamplesDataDrivenTesting()
         {
             string[] tagsOfScenario = new string[] {
-                    "TestersTalk"};
+                    "DataTableDataDrivenTesting"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for Testers Talk", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Examples Data Driven Testing", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -98,8 +98,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.When("Enter the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "searchKey"});
+                table1.AddRow(new string[] {
+                            "1st datatable data set"});
+                table1.AddRow(new string[] {
+                            "2nd datatable data set"});
+                table1.AddRow(new string[] {
+                            "3rd datatable data set"});
 #line 9
- testRunner.Then("Search for Testers Talk", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Enter search keyword in Youtube", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
