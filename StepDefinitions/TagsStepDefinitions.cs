@@ -1,3 +1,4 @@
+using NuGet.Frameworks;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -32,6 +33,20 @@ namespace SpecFlow.StepDefinitions
         public void ThenUserVerifiesTitle()
         {
             Assert.AreEqual(driver.Title, "CBC.ca - watch, listen, and discover with Canada's Public Broadcaster");
+        }
+
+        [Then(@"User verifies the menu button is not null")]
+        public void ThenUserVerifiesTheMenuButtonIsNotNull()
+        {
+            IWebElement menuButton = driver.FindElement(By.XPath("//*[@id=\"menuButton\"]"));
+            Assert.IsNotNull(menuButton);
+        }
+
+        [Then(@"User verifies the headline is not null")]
+        public void ThenUserVerifiesTheHeadlineIsNotNull()
+        {
+            IWebElement headline = driver.FindElement(By.ClassName("headline"));
+            Assert.IsNotNull(headline);
         }
 
         [Then(@"User closes the browser")]

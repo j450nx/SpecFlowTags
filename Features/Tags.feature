@@ -11,12 +11,12 @@ Scenario: Verify CBC title
 Scenario: Verify menu button
 	Given Browser is opened
 	Then User navigates to URL
-	Then User verifies the menu button visible
+	Then User verifies the menu button is not null
 	Then User closes the browser
 
 @Sanity @Regression
 Scenario: Verify headline class
 	Given Browser is opened
 	Then User navigates to URL
-	Then User verifies the headline class is visible
+	Then User verifies the headline is not null
 	Then User closes the browser

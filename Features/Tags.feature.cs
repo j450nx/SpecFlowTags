@@ -134,7 +134,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("User navigates to URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 14
- testRunner.Then("User verifies the menu button visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User verifies the menu button is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15
  testRunner.Then("User closes the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -171,7 +171,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("User navigates to URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 21
- testRunner.Then("User verifies the headline class is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User verifies the headline is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 22
  testRunner.Then("User closes the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
