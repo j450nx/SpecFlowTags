@@ -2,23 +2,18 @@
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SpecFlowProject1.Utility
+namespace SpecFlowTags.Utility
 {
-   
+
     public class ExtentReport
     {
         public static ExtentReports _extentReports;
         public static ExtentTest _feature;
         public static ExtentTest _scenario;
 
-        public static String dir = AppDomain.CurrentDomain.BaseDirectory;
-        public static String testResultPath = dir.Replace("bin\\Debug\\net6.0", "TestResults");
+        public static string dir = AppDomain.CurrentDomain.BaseDirectory;
+        public static string testResultPath = dir.Replace("bin\\Debug\\net6.0", "TestResults");
 
         public static void ExtentReportInit()
         {

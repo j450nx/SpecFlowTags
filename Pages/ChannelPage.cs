@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpecFlowProject1.Pages
+namespace SpecFlowTags.Pages
 {
     public class ChannelPage
     {
         private IWebDriver driver;
-        public ChannelPage (IWebDriver driver)
+        public ChannelPage(IWebDriver driver)
         {
             this.driver = driver;
         }
-        
-        public String getTitle()
+
+        public string getTitle()
         {
             return driver.Title;
         }

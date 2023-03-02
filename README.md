@@ -11,3 +11,5 @@ dotnet test --filter TestCategory=Smoke
 dotnet test --filter TestCategory=Sanity
 dotnet test --filter TestCategory=Regression
 dotnet test --filter "TestCategory=Sanity|TestCategory=Regression"
+dotnet test --filter "TestCategory=Sanity&TestCategory=Regression"
+dotnet test --filter TestCategory=!Sanity

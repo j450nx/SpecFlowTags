@@ -3,31 +3,24 @@ using AventStack.ExtentReports.Gherkin.Model;
 using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
-using SpecFlowProject1.Utility;
-using TechTalk.SpecFlow;
+using SpecFlowTags.Utility;
 
-namespace SpecFlowProject1.Hooks
+namespace SpecFlowTags.Hooks
 {
     [Binding]
-    public sealed class Hooks :ExtentReport
+    public sealed class Hooks : ExtentReport //inherit ExtentReport class
     {
         private readonly IObjectContainer _container;
         public Hooks(IObjectContainer container)
         {
             _container = container;
         }
+
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
             Console.WriteLine("Running before test run...");
             ExtentReportInit();
-        }
-
-        [AfterTestRun]
-        public static void AfterTestRun()
-        {
-            Console.WriteLine("Running after test run...");
-            ExtentReportTearDown();
         }
 
         [BeforeFeature]
@@ -37,39 +30,22 @@ namespace SpecFlowProject1.Hooks
             _feature = _extentReports.CreateTest<Feature>(featureContext.FeatureInfo.Title);
         }
 
-        [AfterFeature]
-        public static void AfterFeature()
-        {
-            Console.WriteLine("Running after feature...");
-        }
-
-        [BeforeScenario("@TestersTalk")]
-        public void BeforeScenarioWithTag()
-        {
-            Console.WriteLine("Running inside tagged hooks in SpecFlow");
-        }
+        //[BeforeScenario("@PageObjectModel")]
+        //public void BeforeScenarioWithTag()
+        //{
+        //    Console.WriteLine("Running inside tagged hooks in SpecFlow");
+        //}
 
         [BeforeScenario(Order = 1)]
-        public void FirstBeforeScenario(ScenarioContext scenarioContext)
+        public void BeforeScenario(ScenarioContext scenarioContext)
         {
             Console.WriteLine("Running before scenario...");
             IWebDriver driver = new EdgeDriver();
             driver.Manage().Window.Maximize();
 
-            _container.RegisterInstanceAs<IWebDriver>(driver);
+            _container.RegisterInstanceAs(driver);
 
             _scenario = _feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
-        }
-
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            var driver = _container.Resolve<IWebDriver>();
-            if (driver != null)
-            {
-                driver.Close();
-                driver.Quit();
-            }
         }
 
         [AfterStep]
@@ -127,6 +103,30 @@ namespace SpecFlowProject1.Hooks
                         MediaEntityBuilder.CreateScreenCaptureFromPath(addScreenshot(driver, scenarioContext)).Build());
                 }
             }
+        }
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            var driver = _container.Resolve<IWebDriver>();
+            if (driver != null)
+            {
+                driver.Close();
+                driver.Quit();
+            }
+        }
+
+        [AfterFeature]
+        public static void AfterFeature()
+        {
+            Console.WriteLine("Running after feature...");
+        }
+
+        [AfterTestRun]
+        public static void AfterTestRun()
+        {
+            Console.WriteLine("Running after test run...");
+            ExtentReportTearDown();
         }
     }
 }

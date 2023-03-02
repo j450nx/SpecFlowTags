@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpecFlowProject1.Pages
+namespace SpecFlowTags.Pages
 {
     public class SearchPage
     {
@@ -16,9 +16,9 @@ namespace SpecFlowProject1.Pages
         }
 
         By searchBox = By.XPath("//*[@name='search_query']");
-        
+
         //Abstraction method
-        public ResultPage searchText(String text)
+        public ResultPage searchText(string text)
         {
             driver.FindElement(searchBox).SendKeys(text);
             driver.FindElement(searchBox).SendKeys(Keys.Enter);

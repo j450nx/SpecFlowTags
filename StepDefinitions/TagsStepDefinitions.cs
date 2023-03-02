@@ -1,10 +1,7 @@
-using NuGet.Frameworks;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SpecFlowProject1.Pages;
 
-namespace SpecFlow.StepDefinitions
+namespace SpecFlowTags.StepDefinitions
 {
     [Binding]
     public sealed class TagsStepDefinitions
